@@ -1,0 +1,17 @@
+{
+  "name": "rough-glycan.js",
+  "version": "0.0.1",
+  "description": "Plugin for rough rendering of glycans",
+  "main": "./js/index.js",
+  "module": "./js/main.js",
+  "dependencies": {
+  	"glycan.js": "github:hirenj/glycan.js",
+    "esm": "3.2.20",
+    "roughjs": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hirenj@gmail.com",
+  "license": "ISC"
+}
