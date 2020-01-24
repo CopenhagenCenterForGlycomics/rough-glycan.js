@@ -8,7 +8,7 @@ import { CanvasRenderer } from 'glycan.js';
 
 const Canvas = CanvasRenderer.Canvas;
 
-import rough from 'roughjs/dist/rough.umd.js';
+import rough from 'roughjs/bundled/rough.esm.js';
 
 const draw_path = (path,ctx,rc) => {
   if (path.rotate) {
