@@ -10,6 +10,9 @@ const Canvas = CanvasRenderer.Canvas;
 
 import rough from 'roughjs/bundled/rough.esm.js';
 
+const FILLSTYLE = 'hachure';//'cross-hatch';
+const STROKE_COLOR = '#111';
+
 const draw_path = (path,ctx,rc) => {
   if (path.rotate) {
     ctx.save();
@@ -21,14 +24,14 @@ const draw_path = (path,ctx,rc) => {
   if (path.d) {
     if (path.fill !== 'none') {
       rc.path(path.d,{ fill: '#fff', stroke: '#fff', roughness: 0, fillStyle: 'solid', strokeWidth: 0 });
-      rc.path(path.d,{ fill: path.fill, roughness: 2, fillStyle: 'cross-hatch' });
+      rc.path(path.d,{ fill: path.fill || '#000', roughness: (! path.fill) ? 0.5 : 2, fillStyle: FILLSTYLE, fillWeight: 1.5, stroke: STROKE_COLOR });
     } else {
       rc.path(path.d,{ roughness: 2 });
     }
   }
   if (path.cx) {
     rc.circle(path.cx,path.cy,2*path.r, {fill: '#fff', stroke: '#fff', roughness: 0, fillStyle: 'solid' , strokeWidth: 0 });
-    rc.circle(path.cx,path.cy,2*path.r, {fill: path.fill, roughness: 2, fillStyle: 'cross-hatch' });
+    rc.circle(path.cx,path.cy,2*path.r, {fill: path.fill, roughness: 2, fillWeight: 1.5, fillStyle: FILLSTYLE, stroke: STROKE_COLOR });
   }
   if (path.fontSize) {
     ctx.font = `${path.fontSize}px sans-serif`;
