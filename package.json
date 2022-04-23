@@ -9,7 +9,7 @@
     "roughjs": "^4.0.4"
   },
   "peerDependencies": {
-    "glycan.js": "github:hirenj/glycan.js"
+    "glycan.js": "github:CopenhagenCenterForGlycomics/glycan.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
