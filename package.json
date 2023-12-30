@@ -4,8 +4,10 @@
   "description": "Plugin for rough rendering of glycans",
   "main": "./js/index.js",
   "module": "./js/main.js",
+  "devDependencies": {
+    "esm": "3.2.20"
+  },
   "dependencies": {
-    "esm": "3.2.20",
     "roughjs": "^4.0.4"
   },
   "peerDependencies": {
